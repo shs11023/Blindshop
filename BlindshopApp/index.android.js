@@ -4,6 +4,7 @@ import {
   View,
   Button,
   Text,
+  Image,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
@@ -20,6 +21,17 @@ class HomeScreen extends React.Component {
           onPress={() => navigate('Chat', { user: 'Lucy' })}
           title="Chat with Lucy"
         />
+
+        <Image source={{
+              uri: 'https://facebook.github.io/react/img/logo_og.png',
+              method: 'POST',
+              headers: {
+                Pragma: 'no-cache'
+              },
+              body: 'Your Body goes here'
+            }}
+            style={{width: 400, height: 400}} />
+
       </View>
     );
   }
@@ -35,6 +47,7 @@ class ChatScreen extends React.Component {
     return (
       <View>
         <Text>Chat with {params.user}</Text>
+        <Image source={require('./resources/profilepic.jpg')} style={{width: 80, height: 80}} />
       </View>
     );
   }
